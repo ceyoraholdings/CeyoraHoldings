@@ -1,5 +1,6 @@
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import logo from './logo.png';
 
 interface NavigationProps {
   currentPage: string;
@@ -20,10 +21,14 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div
-            className="text-2xl font-bold text-slate-800 cursor-pointer tracking-tight"
+            className="flex items-center cursor-pointer"
             onClick={() => onNavigate('home')}
           >
-            CEYORA HOLDINGS
+            <img 
+              src={logo} 
+              alt="Ceyora Holdings" 
+              className="h-20 w-auto object-contain" 
+            />
           </div>
 
           <div className="hidden md:flex space-x-8">

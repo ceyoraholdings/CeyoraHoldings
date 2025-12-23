@@ -8,18 +8,18 @@ export default function Home({ onNavigate }: HomeProps) {
   const features = [
     {
       icon: Globe,
-      title: 'Global Destinations',
-      description: 'Explore breathtaking locations across the world with our curated travel experiences',
+      title: 'Island Wide Service',
+      description: 'Travel without boundaries. We offer seamless pickup and drop-off services to any destination on the island, 24/7.',
     },
     {
       icon: Users,
-      title: 'Expert Guides',
-      description: 'Professional and knowledgeable guides ensuring memorable adventures',
+      title: 'Expert Guides And Drivers',
+      description: 'Your safety is our priority. Our friendly, English-speaking drivers are highly experienced and dedicated to making your journey smooth and stress-free.',
     },
     {
       icon: Award,
       title: 'Premium Service',
-      description: 'Luxury accommodations and first-class service throughout your journey',
+      description: 'Travel in style with our fleet of luxury, fully air-conditioned vans. Featuring spacious seating and ample luggage room, we make every mile a pleasure.',
     },
   ];
 
@@ -31,14 +31,13 @@ export default function Home({ onNavigate }: HomeProps) {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-800 mb-6 animate-fadeInUp">
-            Discover Your Next
-            <span className="block mt-2 bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent">
-              Adventure
+            CEYORA
+            <span className="block mt-2 bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent tracking-widest">
+              HOLDINGS
             </span>
           </h1>
           <p className="text-xl text-slate-600 mb-12 max-w-2xl mx-auto animate-fadeInUp animation-delay-200">
-            Experience the world's most stunning destinations with Ceyora Holdings.
-            Your journey to extraordinary begins here.
+            Your Gateway to Sri Lanka – Premium Van Rentals & Tours.
           </p>
           <button
             onClick={() => onNavigate('services')}
@@ -81,7 +80,7 @@ export default function Home({ onNavigate }: HomeProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-slate-800 mb-6">Ready to Start Your Journey?</h2>
           <p className="text-slate-600 mb-8 max-w-2xl mx-auto">
-            Get in touch with our team to plan your perfect getaway
+            Get in touch with our team to plan your perfect fleet
           </p>
           <button
             onClick={() => onNavigate('contact')}

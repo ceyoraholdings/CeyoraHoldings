@@ -4,39 +4,28 @@ import { ChevronLeft, ChevronRight, MapPin, Calendar, Star } from 'lucide-react'
 const services = [
   {
     id: 1,
-    title: 'Tropical Paradise Tours',
-    description: 'Immerse yourself in pristine beaches, crystal-clear waters, and lush tropical landscapes. Perfect for relaxation and adventure.',
-    features: ['7-14 Day Packages', 'Luxury Resorts', 'Water Sports', 'Island Hopping'],
-    image: 'https://images.pexels.com/photos/1287460/pexels-photo-1287460.jpeg?auto=compress&cs=tinysrgb&w=800',
+    title: '24/7 Airport Transportation',
+    description: 'Reliable pickup and drop-off services at Bandaranaike International Airport. We track your flight status to ensure your driver is waiting exactly when you land.',
+    features: ['Meet & Greet at Arrivals', 'Flight Delay Monitoring', '24/7 Availability', 'Luggage Assistance'],
+    image: 'https://images.pexels.com/photos/358220/pexels-photo-358220.jpeg',
+    whatsappMessage: 'Hi Ceyora Holdings! I would like to book an Airport Transfer. Could you please provide more details?'
   },
   {
     id: 2,
-    title: 'Mountain Adventures',
-    description: 'Conquer majestic peaks and explore breathtaking mountain trails with experienced guides and premium equipment.',
-    features: ['Guided Treks', 'Safety Equipment', 'Base Camps', 'Photography Tours'],
-    image: 'https://images.pexels.com/photos/869258/pexels-photo-869258.jpeg?auto=compress&cs=tinysrgb&w=800',
+    title: 'Family & Group Travel',
+    description: 'Spacious luxury vans perfect for family vacations and group outings across Sri Lanka. Our professional chauffeurs ensure a smooth journey.',
+    features: ['9-14 Seater Luxury Vans', 'Experienced Chauffeurs', 'Flexible Daily Rates', 'Full Air-Conditioning'],
+    image: 'https://images.pexels.com/photos/13391116/pexels-photo-13391116.jpeg',
+    whatsappMessage: 'Hi Ceyora Holdings! I am interested in a van for a family/group trip. What are your daily rates?'
   },
   {
     id: 3,
-    title: 'Cultural Heritage Tours',
-    description: 'Discover ancient civilizations, historical landmarks, and immerse yourself in rich cultural experiences.',
-    features: ['Expert Historians', 'Authentic Cuisine', 'Local Experiences', 'Museum Access'],
-    image: 'https://images.pexels.com/photos/1603650/pexels-photo-1603650.jpeg?auto=compress&cs=tinysrgb&w=800',
-  },
-  {
-    id: 4,
-    title: 'Wildlife Safaris',
-    description: 'Experience the thrill of encountering exotic wildlife in their natural habitats with our expert safari guides.',
-    features: ['Game Drives', 'Professional Guides', 'Luxury Lodges', 'Photography Ops'],
-    image: 'https://images.pexels.com/photos/1670732/pexels-photo-1670732.jpeg?auto=compress&cs=tinysrgb&w=800',
-  },
-  {
-    id: 5,
-    title: 'Urban Exploration',
-    description: 'Explore vibrant cities, experience world-class dining, and discover hidden gems in metropolises around the globe.',
-    features: ['City Tours', 'Fine Dining', 'Shopping Experiences', 'Nightlife Access'],
-    image: 'https://images.pexels.com/photos/1388030/pexels-photo-1388030.jpeg?auto=compress&cs=tinysrgb&w=800',
-  },
+    title: 'Corporate & Wedding Events',
+    description: 'Professional transportation solutions for business delegations or wedding parties. We prioritize punctuality and premium presentation.',
+    features: ['Uniformed Drivers', 'Punctual Service', 'Multiple Vehicle Booking', 'Custom Itineraries'],
+    image: 'https://images.pexels.com/photos/19984917/pexels-photo-19984917.jpeg',
+    whatsappMessage: 'Hi Ceyora Holdings! I would like to inquire about transportation for an upcoming event/wedding.'
+  }
 ];
 
 export default function Services() {
@@ -127,9 +116,18 @@ export default function Services() {
                           ))}
                         </div>
 
-                        <button className="group inline-flex items-center gap-2 bg-slate-800 text-white px-6 py-3 rounded-full font-medium hover:bg-slate-900 transition-all duration-300 hover:scale-105 w-fit">
+                        <button 
+                          onClick={() => {
+                            const phoneNumber = "94767393088"; // phone number
+                            const message = encodeURIComponent(service.whatsappMessage);
+                            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+                            
+                            window.open(whatsappUrl, '_blank');
+                          }}
+                          className="group inline-flex items-center gap-2 bg-slate-800 text-white px-6 py-3 rounded-full font-medium hover:bg-slate-900 transition-all duration-300 hover:scale-105 w-fit"
+                        >
                           <Calendar className="w-4 h-4" />
-                          Book This Experience
+                          Book via WhatsApp
                         </button>
                       </div>
                     </div>
@@ -172,7 +170,7 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      {/* <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div className="p-6 animate-fadeInUp">
@@ -189,7 +187,7 @@ export default function Services() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

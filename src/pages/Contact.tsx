@@ -30,14 +30,14 @@ export default function Contact() {
     {
       icon: Mail,
       title: 'Email',
-      detail: 'hello@ceyoraholdings.com',
-      link: 'mailto:hello@ceyoraholdings.com',
+      detail: 'ceyoraholdings@gmail.com',
+      link: 'mailto:ceyoraholdings@gmail.com',
     },
     {
       icon: Phone,
       title: 'Phone',
-      detail: '+1 (555) 123-4567',
-      link: 'tel:+15551234567',
+      detail: '+94 76 739 3088',
+      link: 'tel:+94767393088',
     },
     {
       icon: MapPin,
@@ -55,7 +55,7 @@ export default function Contact() {
             Get In Touch
           </h1>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto animate-fadeInUp animation-delay-200">
-            Have a question or ready to plan your next adventure? We'd love to hear from you
+            Have a question or ready to plan your next ride? We'd love to hear from you
           </p>
         </div>
       </section>
@@ -118,7 +118,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-slate-800 focus:ring-2 focus:ring-slate-800/20 outline-none transition-all"
-                    placeholder="John Doe"
+                    placeholder="Saman Weerasinghe"
                   />
                 </div>
 
@@ -134,7 +134,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-slate-800 focus:ring-2 focus:ring-slate-800/20 outline-none transition-all"
-                    placeholder="john@example.com"
+                    placeholder="saman@example.com"
                   />
                 </div>
 
@@ -149,7 +149,7 @@ export default function Contact() {
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-slate-800 focus:ring-2 focus:ring-slate-800/20 outline-none transition-all"
-                    placeholder="+1 (555) 123-4567"
+                    placeholder="+94 76 739 3088"
                   />
                 </div>
 
@@ -165,7 +165,7 @@ export default function Contact() {
                     required
                     rows={6}
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-slate-800 focus:ring-2 focus:ring-slate-800/20 outline-none transition-all resize-none"
-                    placeholder="Tell us about your dream vacation..."
+                    placeholder="Tell us about your ride..."
                   />
                 </div>
 
