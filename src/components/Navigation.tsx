@@ -19,7 +19,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
   return (
     <nav className="fixed w-full bg-white/90 backdrop-blur-md z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="relative flex justify-between items-center h-20">
           <div
             className="flex items-center cursor-pointer"
             onClick={() => onNavigate('home')}
@@ -27,11 +27,11 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
             <img 
               src={logo} 
               alt="Ceyora Holdings" 
-              className="h-20 w-auto object-contain" 
+              className="h-12 w-auto object-contain" 
             />
           </div>
 
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 space-x-10">
             {links.map((link) => (
               <button
                 key={link.page}
@@ -50,12 +50,14 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
             ))}
           </div>
 
-          <button
-            className="md:hidden text-slate-800"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+            <div className="z-10">
+              <button
+                className="md:hidden text-slate-800 p-2"
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                {isOpen ? <X size={28} /> : <Menu size={28} />}
+              </button>
+            </div>
         </div>
       </div>
 

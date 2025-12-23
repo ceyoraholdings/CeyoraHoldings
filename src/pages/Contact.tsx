@@ -42,7 +42,7 @@ export default function Contact() {
     {
       icon: MapPin,
       title: 'Office',
-      detail: '123 Tourism Avenue, Travel City, TC 12345',
+      detail: 'Pannipitiya',
       link: '#',
     },
   ];

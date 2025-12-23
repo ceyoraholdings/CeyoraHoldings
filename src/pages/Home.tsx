@@ -13,7 +13,7 @@ export default function Home({ onNavigate }: HomeProps) {
     },
     {
       icon: Users,
-      title: 'Expert Guides And Drivers',
+      title: 'Friedndly And Proffecianal Drivers',
       description: 'Your safety is our priority. Our friendly, English-speaking drivers are highly experienced and dedicated to making your journey smooth and stress-free.',
     },
     {
