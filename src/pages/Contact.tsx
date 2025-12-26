@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import WhatsAppButton from "../components/WhatsAppButton";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -8,15 +9,42 @@ export default function Contact() {
     phone: '',
     message: '',
   });
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isError, setIsError] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: '', email: '', phone: '', message: '' });
-    }, 3000);
+    setIsSubmitting(true);
+    setIsError(false);
+
+    try {
+      const response = await fetch(import.meta.env.VITE_FORMSPREE_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormData({ name: '', email: '', phone: '', message: '' });
+        
+        // Hide success message after 5 seconds
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 5000);
+      } else {
+        setIsError(true);
+      }
+    } catch (error) {
+      setIsError(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -169,12 +197,22 @@ export default function Contact() {
                   />
                 </div>
 
+                {/* Error Message */}
+                {isError && (
+                  <div className="flex items-center gap-2 text-red-600 bg-red-50 p-4 rounded-xl text-sm">
+                    <AlertCircle className="w-5 h-5" />
+                    Something went wrong. Please try again.
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  disabled={isSubmitted}
+                  disabled={isSubmitting || isSubmitted}
                   className="w-full bg-slate-800 text-white py-4 rounded-xl font-medium hover:bg-slate-900 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
-                  {isSubmitted ? (
+                  {isSubmitting ? (
+                    "Sending..."
+                  ) : isSubmitted ? (
                     <>
                       <CheckCircle className="w-5 h-5" />
                       Message Sent!
@@ -191,6 +229,7 @@ export default function Contact() {
           </div>
         </div>
       </section>
+      <WhatsAppButton />
     </div>
   );
 }

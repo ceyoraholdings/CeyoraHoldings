@@ -1,4 +1,5 @@
 import { ArrowRight, Globe, Users, Award } from 'lucide-react';
+import WhatsAppButton from "../components/WhatsAppButton";
 
 interface HomeProps {
   onNavigate: (page: string) => void;
@@ -91,6 +92,7 @@ export default function Home({ onNavigate }: HomeProps) {
           </button>
         </div>
       </section>
+      <WhatsAppButton />
     </div>
   );
 }
